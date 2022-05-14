@@ -1,6 +1,5 @@
 {
   "name": "sdk",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
