@@ -26,7 +26,7 @@ export class TokenTimedRandomSendContract {
         this.firstPrizeCount = firstPrizeCount
     }
 
-    public closeTimestampDate() {
-      new Date(this.closeTimestamp * 1000);
+    public closeTimestampDate(): Date {
+      return new Date(this.closeTimestamp * 1000);
     }
 }
