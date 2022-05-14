@@ -8,6 +8,7 @@ export * from './Price'
 export * from './Route'
 export * from './Token'
 export * from './Trade'
+export * from './TokenTimedRandomSendContract'
 
 // TODO: This is actually a type...
 export * from './Currency'
