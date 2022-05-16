@@ -1,7 +1,7 @@
-import { Token } from './Token';
+import { Currency } from './Currency';
 
 export class TokenTimedRandomSendContract {
-    public readonly token: Token
+    public readonly currency: Currency
     public readonly contractAddress: string
     public readonly name: string
     public readonly symbol: string
@@ -12,9 +12,9 @@ export class TokenTimedRandomSendContract {
     public readonly totalSupply: number
     public readonly firstPrizeCount: number
 
-    public constructor(token: Token, contractAddress: string, name: string, symbol: string, cycle: number, closeTimestamp: number,
+    public constructor(currency: Currency, contractAddress: string, name: string, symbol: string, cycle: number, closeTimestamp: number,
         eventCount: number, participantCount: number, totalSupply: number, firstPrizeCount: number) {
-        this.token = token
+        this.currency = currency
         this.contractAddress = contractAddress
         this.name = name
         this.symbol = symbol
