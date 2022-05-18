@@ -9,6 +9,7 @@ export * from './Route'
 export * from './Token'
 export * from './Trade'
 export * from './TokenTimedRandomSendContract'
+export * from './Ticket'
 
 // TODO: This is actually a type...
 export * from './Currency'
