@@ -1,7 +1,8 @@
 import { Token } from './Token';
 
-export class TokenTimedRandomSendContract {
-    public readonly token: Token
+export class Lottery {
+    public readonly currency: Token
+    public readonly contractAddress: string
     public readonly name: string
     public readonly symbol: string
     public readonly cycle: number
@@ -11,9 +12,10 @@ export class TokenTimedRandomSendContract {
     public readonly totalSupply: number
     public readonly firstPrizeCount: number
 
-    public constructor(token: Token, name: string, symbol: string, cycle: number, closeTimestamp: number,
+    public constructor(currency: Token, contractAddress: string, name: string, symbol: string, cycle: number, closeTimestamp: number,
         eventCount: number, participantCount: number, totalSupply: number, firstPrizeCount: number) {
-        this.token = token
+        this.currency = currency
+        this.contractAddress = contractAddress
         this.name = name
         this.symbol = symbol
         this.cycle = cycle
@@ -24,7 +26,7 @@ export class TokenTimedRandomSendContract {
         this.firstPrizeCount = firstPrizeCount
     }
 
-    public closeTimestampDate() {
-      new Date(this.closeTimestamp * 1000);
+    public closeTimestampDate(): Date {
+      return new Date(this.closeTimestamp * 1000);
     }
 }
