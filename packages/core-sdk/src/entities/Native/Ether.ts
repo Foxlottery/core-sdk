@@ -1,7 +1,7 @@
 import { Currency } from '../Currency'
 import { NativeCurrency } from '../NativeCurrency'
 import { Token } from '../Token'
-import { WETH9 } from '../../constants/tokens'
+import { WNATIVE } from '../../constants/tokens'
 import invariant from 'tiny-invariant'
 
 /**
@@ -13,9 +13,9 @@ export class Ether extends NativeCurrency {
   }
 
   public get wrapped(): Token {
-    const weth9 = WETH9[this.chainId]
-    invariant(!!weth9, 'WRAPPED')
-    return weth9
+    const wrapped = WNATIVE[this.chainId]
+    invariant(!!wrapped, 'WRAPPED')
+    return wrapped
   }
 
   private static _etherCache: { [chainId: number]: Ether } = {}
