@@ -1,4 +1,4 @@
 import { NativeCurrency } from './NativeCurrency'
-import { Token } from './Token'
+import { Erc20Currency } from './Erc20Currency'
 
-export type Currency = NativeCurrency | Token
+export type Currency = NativeCurrency | Erc20Currency

@@ -1,5 +1,5 @@
 import { Currency } from './Currency'
-import { Token } from './Token'
+import { Erc20Currency } from './Erc20Currency'
 import invariant from 'tiny-invariant'
 
 /**
@@ -13,7 +13,7 @@ export abstract class AbstractCurrency {
   /**
    * Returns whether the currency is a token that is usable in Uniswap without wrapping
    */
-  public abstract readonly isToken: boolean
+  public abstract readonly isErc20: boolean
 
   /**
    * The chain ID on which this currency resides
@@ -59,5 +59,5 @@ export abstract class AbstractCurrency {
    * Return the wrapped version of this currency that can be used with the Uniswap contracts. Currencies must
    * implement this to be used in Uniswap
    */
-  public abstract get wrapped(): Token
+  public abstract get wrapped(): Erc20Currency
 }

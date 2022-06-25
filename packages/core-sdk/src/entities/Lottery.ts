@@ -1,7 +1,7 @@
-import { Token } from './Token';
+import { Erc20Currency } from './Erc20Currency';
 
 export class Lottery {
-    public readonly currency: Token
+    public readonly erc20Currency: Erc20Currency
     public readonly contractAddress: string
     public readonly name: string
     public readonly symbol: string
@@ -12,9 +12,9 @@ export class Lottery {
     public readonly totalSupply: number
     public readonly firstPrizeCount: number
 
-    public constructor(currency: Token, contractAddress: string, name: string, symbol: string, cycle: number, closeTimestamp: number,
+    public constructor(erc20Currency: Erc20Currency, contractAddress: string, name: string, symbol: string, cycle: number, closeTimestamp: number,
         eventCount: number, participantCount: number, totalSupply: number, firstPrizeCount: number) {
-        this.currency = currency
+        this.erc20Currency = erc20Currency
         this.contractAddress = contractAddress
         this.name = name
         this.symbol = symbol
