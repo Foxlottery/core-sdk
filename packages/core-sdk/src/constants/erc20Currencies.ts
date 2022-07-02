@@ -11,9 +11,27 @@ export const USDC: Erc20CurrencyMap = {
   [ChainId.AVALANCHE]: new Erc20Currency(ChainId.AVALANCHE, USDC_ADDRESS[ChainId.AVALANCHE], 6, 'USDC', 'USD Coin'),
   [ChainId.RINKEBY]: new Erc20Currency(ChainId.RINKEBY, USDC_ADDRESS[ChainId.RINKEBY], 6, 'USDC', 'USD Coin'),
   [ChainId.GÖRLI]: new Erc20Currency(ChainId.GÖRLI, USDC_ADDRESS[ChainId.GÖRLI], 6, 'USDC', 'USD Coin'),
-  [ChainId.MATIC_TESTNET]:  new Erc20Currency(ChainId.MATIC_TESTNET, USDC_ADDRESS[ChainId.MATIC_TESTNET], 6, 'USDC', 'USD Coin'),
-  [ChainId.BSC_TESTNET]: new Erc20Currency(ChainId.BSC_TESTNET, USDC_ADDRESS[ChainId.BSC_TESTNET], 6, 'USDC', 'USD Coin'),
-  [ChainId.AVALANCHE_TESTNET]: new Erc20Currency(ChainId.AVALANCHE_TESTNET, USDC_ADDRESS[ChainId.AVALANCHE_TESTNET], 6, 'USDC', 'USD Coin'),
+  [ChainId.MATIC_TESTNET]: new Erc20Currency(
+    ChainId.MATIC_TESTNET,
+    USDC_ADDRESS[ChainId.MATIC_TESTNET],
+    6,
+    'USDC',
+    'USD Coin'
+  ),
+  [ChainId.BSC_TESTNET]: new Erc20Currency(
+    ChainId.BSC_TESTNET,
+    USDC_ADDRESS[ChainId.BSC_TESTNET],
+    6,
+    'USDC',
+    'USD Coin'
+  ),
+  [ChainId.AVALANCHE_TESTNET]: new Erc20Currency(
+    ChainId.AVALANCHE_TESTNET,
+    USDC_ADDRESS[ChainId.AVALANCHE_TESTNET],
+    6,
+    'USDC',
+    'USD Coin'
+  ),
 }
 
 export const USD: Erc20CurrencyMap = {
@@ -21,7 +39,13 @@ export const USD: Erc20CurrencyMap = {
 }
 
 export const WNATIVE: Erc20CurrencyMap = {
-  [ChainId.ETHEREUM]: new Erc20Currency(ChainId.ETHEREUM, WNATIVE_ADDRESS[ChainId.ETHEREUM], 18, 'WETH', 'Wrapped Ether'),
+  [ChainId.ETHEREUM]: new Erc20Currency(
+    ChainId.ETHEREUM,
+    WNATIVE_ADDRESS[ChainId.ETHEREUM],
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
   [ChainId.RINKEBY]: new Erc20Currency(ChainId.RINKEBY, WNATIVE_ADDRESS[ChainId.RINKEBY], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.GÖRLI]: new Erc20Currency(ChainId.GÖRLI, WNATIVE_ADDRESS[ChainId.GÖRLI], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.MATIC]: new Erc20Currency(ChainId.MATIC, WNATIVE_ADDRESS[ChainId.MATIC], 18, 'WMATIC', 'Wrapped Matic'),
@@ -40,7 +64,13 @@ export const WNATIVE: Erc20CurrencyMap = {
     'WBNB',
     'Wrapped BNB'
   ),
-  [ChainId.AVALANCHE]: new Erc20Currency(ChainId.AVALANCHE, WNATIVE_ADDRESS[ChainId.AVALANCHE], 18, 'WAVAX', 'Wrapped AVAX'),
+  [ChainId.AVALANCHE]: new Erc20Currency(
+    ChainId.AVALANCHE,
+    WNATIVE_ADDRESS[ChainId.AVALANCHE],
+    18,
+    'WAVAX',
+    'Wrapped AVAX'
+  ),
   [ChainId.AVALANCHE_TESTNET]: new Erc20Currency(
     ChainId.AVALANCHE_TESTNET,
     WNATIVE_ADDRESS[ChainId.AVALANCHE_TESTNET],
@@ -49,4 +79,3 @@ export const WNATIVE: Erc20CurrencyMap = {
     'Wrapped AVAX'
   ),
 }
-
