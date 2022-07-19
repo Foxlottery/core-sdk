@@ -1,15 +1,16 @@
+import JSBI from 'jsbi'
+import invariant from 'tiny-invariant'
+
+import { Rounding } from '../enums'
 import { BigintIsh } from '../types'
 import { Currency } from './Currency'
 import { CurrencyAmount } from './CurrencyAmount'
 import { Fraction } from './Fraction'
-import JSBI from 'jsbi'
-import { Rounding } from '../enums'
-import invariant from 'tiny-invariant'
 
 export class Price<TBase extends Currency, TQuote extends Currency> extends Fraction {
   public readonly baseCurrency: TBase // input i.e. denominator
   public readonly quoteCurrency: TQuote // output i.e. numerator
-  public readonly scalar: Fraction // used to adjust the raw fraction w/r/t the decimals of the {base,quote}Token
+  public readonly scalar: Fraction // used to adjust the raw fraction w/r/t the decimals of the {base,quote}Erc20Currency
 
   /**
    * Construct a price, either with the base and quote currency amount, or the

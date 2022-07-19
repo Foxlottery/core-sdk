@@ -8,7 +8,14 @@ export class Ticket {
   public readonly tokenAmount: number
   public readonly buyDate: number // 購入した時間ではなく、入手時間にする必要がある, getDateのようにする
 
-  public constructor(address: string, lottery: Lottery, isActive: boolean, numbers: number, tokenAmount: number, buyDate: number) {
+  public constructor(
+    address: string,
+    lottery: Lottery,
+    isActive: boolean,
+    numbers: number,
+    tokenAmount: number,
+    buyDate: number
+  ) {
     this.address = address
     this.lottery = lottery
     this.isActive = isActive

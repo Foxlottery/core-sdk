@@ -1,17 +1,20 @@
+import { Contract } from '@ethersproject/contracts'
+import invariant from 'tiny-invariant'
+
+import { validateAndParseAddress } from '../functions/validateAndParseAddress'
 import { AbstractCurrency } from './AbstractCurrency'
 import { Currency } from './Currency'
-import invariant from 'tiny-invariant'
-import { validateAndParseAddress } from '../functions/validateAndParseAddress'
 
 /**
  * Represents an ERC20 token with a unique address and some metadata.
  */
-export class Token extends AbstractCurrency {
+export class Erc20Currency extends AbstractCurrency {
+  public contract?: Contract
   public readonly chainId: number
   public readonly address: string
 
   public readonly isNative: false = false
-  public readonly isToken: true = true
+  public readonly isErc20: true = true
 
   public constructor(chainId: number, address: string, decimals: number, symbol?: string, name?: string) {
     super(chainId, decimals, symbol, name)
@@ -24,7 +27,7 @@ export class Token extends AbstractCurrency {
    * @param other other token to compare
    */
   public equals(other: Currency): boolean {
-    return other.isToken && this.chainId === other.chainId && this.address === other.address
+    return other.isErc20 && this.chainId === other.chainId && this.address === other.address
   }
 
   /**
@@ -33,7 +36,7 @@ export class Token extends AbstractCurrency {
    * @throws if the tokens have the same address
    * @throws if the tokens are on different chains
    */
-  public sortsBefore(other: Token): boolean {
+  public sortsBefore(other: Erc20Currency): boolean {
     invariant(this.chainId === other.chainId, 'CHAIN_IDS')
     invariant(this.address !== other.address, 'ADDRESSES')
     return this.address.toLowerCase() < other.address.toLowerCase()
@@ -42,7 +45,7 @@ export class Token extends AbstractCurrency {
   /**
    * Return this token, which does not need to be wrapped
    */
-  public get wrapped(): Token {
+  public get wrapped(): Erc20Currency {
     return this
   }
 
@@ -58,11 +61,11 @@ export class Token extends AbstractCurrency {
  * Compares two currencies for equality
  */
 export function currencyEquals(currencyA: Currency, currencyB: Currency): boolean {
-  if (currencyA instanceof Token && currencyB instanceof Token) {
+  if (currencyA instanceof Erc20Currency && currencyB instanceof Erc20Currency) {
     return currencyA.equals(currencyB)
-  } else if (currencyA instanceof Token) {
+  } else if (currencyA instanceof Erc20Currency) {
     return false
-  } else if (currencyB instanceof Token) {
+  } else if (currencyB instanceof Erc20Currency) {
     return false
   } else {
     return currencyA === currencyB

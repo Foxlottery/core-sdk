@@ -1,13 +1,14 @@
-import { BigintIsh } from '../types'
-import { Currency } from './Currency'
-import { Fraction } from './Fraction'
-import JSBI from 'jsbi'
-import { MaxUint256 } from '../constants'
-import { Rounding } from '../enums'
-import { Token } from './Token'
 import _Big from 'big.js'
+import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import toFormat from 'toformat'
+
+import { MaxUint256 } from '../constants'
+import { Rounding } from '../enums'
+import { BigintIsh } from '../types'
+import { Currency } from './Currency'
+import { Erc20Currency } from './Erc20Currency'
+import { Fraction } from './Fraction'
 
 const Big = toFormat(_Big)
 
@@ -91,8 +92,8 @@ export class CurrencyAmount<T extends Currency> extends Fraction {
     return new Big(this.quotient.toString()).div(this.decimalScale.toString()).toFormat(format)
   }
 
-  public get wrapped(): CurrencyAmount<Token> {
-    if (this.currency.isToken) return this as CurrencyAmount<Token>
+  public get wrapped(): CurrencyAmount<Erc20Currency> {
+    if (this.currency.isErc20) return this as CurrencyAmount<Erc20Currency>
     return CurrencyAmount.fromFractionalAmount(this.currency.wrapped, this.numerator, this.denominator)
   }
 

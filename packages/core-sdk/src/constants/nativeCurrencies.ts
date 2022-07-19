@@ -1,10 +1,4 @@
-import {
-  Avalanche,
-  Binance,
-  Ether,
-  Matic,
-} from '../entities/Native'
-
+import { Avalanche, Binance, Ether, Matic } from '../entities/Native'
 import { ChainId } from '../enums'
 import { NativeMap } from '../types'
 
