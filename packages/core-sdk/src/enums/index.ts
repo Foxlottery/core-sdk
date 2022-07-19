@@ -1,4 +1,6 @@
 export { ChainId } from './ChainId'
 export { ChainKey } from './ChainKey'
+export { LotteryStatus } from './LotteryStatus'
+export { LotteryStatusIndex } from './LotteryStatusIndex'
 export { Rounding } from './Rounding'
 export { SolidityType } from './SolidityType'

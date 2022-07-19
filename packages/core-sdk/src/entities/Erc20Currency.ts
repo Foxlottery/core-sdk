@@ -1,12 +1,15 @@
+import { Contract } from '@ethersproject/contracts'
+import invariant from 'tiny-invariant'
+
+import { validateAndParseAddress } from '../functions/validateAndParseAddress'
 import { AbstractCurrency } from './AbstractCurrency'
 import { Currency } from './Currency'
-import invariant from 'tiny-invariant'
-import { validateAndParseAddress } from '../functions/validateAndParseAddress'
 
 /**
  * Represents an ERC20 token with a unique address and some metadata.
  */
 export class Erc20Currency extends AbstractCurrency {
+  public contract?: Contract
   public readonly chainId: number
   public readonly address: string
 

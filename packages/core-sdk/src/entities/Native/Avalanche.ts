@@ -1,8 +1,9 @@
-import { Currency } from '../Currency'
-import { NativeCurrency } from '../NativeCurrency'
-import { Erc20Currency } from '../Erc20Currency'
-import { WNATIVE } from '../../constants/erc20Currencies'
 import invariant from 'tiny-invariant'
+
+import { WNATIVE } from '../../constants/erc20Currencies'
+import { Currency } from '../Currency'
+import { Erc20Currency } from '../Erc20Currency'
+import { NativeCurrency } from '../NativeCurrency'
 
 export class Avalanche extends NativeCurrency {
   protected constructor(chainId: number) {

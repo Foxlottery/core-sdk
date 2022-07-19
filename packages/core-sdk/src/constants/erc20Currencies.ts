@@ -1,8 +1,7 @@
+import { Erc20Currency } from '../entities/Erc20Currency'
+import { ChainId } from '../enums'
 import { Erc20CurrencyMap } from '../types'
 import { USDC_ADDRESS, WNATIVE_ADDRESS } from './addresses'
-
-import { ChainId } from '../enums'
-import { Erc20Currency } from '../entities/Erc20Currency'
 
 export const USDC: Erc20CurrencyMap = {
   [ChainId.ETHEREUM]: new Erc20Currency(ChainId.ETHEREUM, USDC_ADDRESS[ChainId.ETHEREUM], 6, 'USDC', 'USD Coin'),

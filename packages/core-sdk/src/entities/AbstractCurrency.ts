@@ -1,6 +1,7 @@
+import invariant from 'tiny-invariant'
+
 import { Currency } from './Currency'
 import { Erc20Currency } from './Erc20Currency'
-import invariant from 'tiny-invariant'
 
 /**
  * A currency is any fungible financial instrument, including Ether, all ERC20 tokens, and other chain-native currencies

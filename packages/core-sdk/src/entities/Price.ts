@@ -1,10 +1,11 @@
+import JSBI from 'jsbi'
+import invariant from 'tiny-invariant'
+
+import { Rounding } from '../enums'
 import { BigintIsh } from '../types'
 import { Currency } from './Currency'
 import { CurrencyAmount } from './CurrencyAmount'
 import { Fraction } from './Fraction'
-import JSBI from 'jsbi'
-import { Rounding } from '../enums'
-import invariant from 'tiny-invariant'
 
 export class Price<TBase extends Currency, TQuote extends Currency> extends Fraction {
   public readonly baseCurrency: TBase // input i.e. denominator
